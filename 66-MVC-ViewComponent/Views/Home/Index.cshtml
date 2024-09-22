@@ -1,0 +1,23 @@
+﻿@model List<CartItem>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-3">
+        @await Component.InvokeAsync("ShoppingCart")
+    </div>
+    <div class="col-9">
+        @foreach (var item in Model)
+        {
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProductName</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">@item.Price</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

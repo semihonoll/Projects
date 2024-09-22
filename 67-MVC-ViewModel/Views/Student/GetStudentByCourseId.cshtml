@@ -1,0 +1,44 @@
+﻿@model GetAllVM
+
+@{
+    ViewData["Title"] = "GetStudentByCourseId";
+}
+
+<h1>Öğrenci İşlemleri</h1>
+<div class="container">
+    <div class="row my-4">
+        <a asp-action="Create">
+            <button class="btn btn-success">Öğrenci Ekle</button>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <h3>Sınıf Listesi</h3>
+            <hr />
+            <ul>
+                @foreach (var item in Model.Courses)
+                {
+                    <a asp-action="GetStudentByCourseId" asp-controller="Student" asp-route-id="@item.Id">
+                    <li>@item.Name</li></a>
+                }
+                <a asp-action="Index">
+                <li>Tüm Öğrenciler</li></a>
+            </ul>
+        </div>
+        <div class="col-9">
+            <h3>Öğrenci Listesi</h3>
+            <hr />
+            <div class="row">
+                @foreach (var item in Model.Students)
+                {
+                    <div class="col-3 border m-3 p-3">
+                        <h5>@item.FirstName - @item.LastName</h5>
+                        <p>No: @item.Id</p>
+                        <p>Yaş: @item.Age</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

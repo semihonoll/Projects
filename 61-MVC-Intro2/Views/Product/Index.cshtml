@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<p><b>Bugün: </b> @{DateTime.Now.ToString();} </p>
+<div>
+    @{
+        string merhaba = "<i>Merhaba MVC Dünyası</i>";
+    }
+</div>
+<h2>@merhaba</h2>
+<h2>@Html.Raw(merhaba)</h2>
+
+<p>Deneme Merhaba 
+    @{
+        int age = 18;
+        var selam = "Merhaba";
+
+            <p>Bir html p etiketidir.</p>
+
+        bool varMi = true;
+    }
+</p>
+<hr />
+@{
+    List<string> kategoriler = new List<string> { "Kitaplar", "Kalemler", "Defterler", "Silgiler" };
+}
+<h3>Categories</h3>
+<ul>
+    @foreach (var item in kategoriler)
+    {
+        <li><a href="#" style="color:crimson">@item</a></li>
+        if (item == "Defterler")
+        {
+            <li><a href="#" style="color:green" onclick="Mesaj()"><b>@item</b></a></li>
+        }
+        //Yorum Satırı C#
+    }
+</ul>
+
+<p>
+    @for (int i = 0; i < 10; i++)
+    {
+        <i>@i</i>
+    }
+</p>
+
+@*
+    Yorum Satırı Razor
+*@
+
+<!--
+    Yorum Satırı HTML...
+-->
+
+<script>
+    function Mesaj() 
+    { 
+        alert("Merhaba")
+    }
+</script>

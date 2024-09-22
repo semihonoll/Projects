@@ -1,0 +1,32 @@
+﻿Okul Bilgi Sistemi: Öğrenci, Öğretmen, Yonetici pozisyonları için CRUD operasyonları yapan program.
+
+- BasePerson (Abstract)
+	-Id, Isim, Soyisim, Yas
+	-Abstract BilgiVer()
+
+- Student: BasePerson
+	- Class
+
+- Person: BasePerson
+	- Pozisyon
+
+IManager<T>
+	- Add<T>
+	- List<T>
+Manager<T>
+	- Add
+	- List
+
+
+IStudentManager
+
+StudentManager
+	- StudentAdd
+	- StudentList
+
+IPersonManager
+
+PersonManager
+	- PersonAdd
+	- PersonList
+

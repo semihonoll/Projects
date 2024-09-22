@@ -1,0 +1,44 @@
+﻿@model List<Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Öğrenci Listesi</h1>
+<h2>Model</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Id - @item.Name</li>
+    }
+</ul>
+
+<hr />
+<h2>View Bag</h2>
+<h3>@ViewBag.Baslik</h3>
+<ul>
+    @foreach (var item in ViewBag.Ogrenciler)
+    {
+        <li>@item.Id - @item.Name</li>
+    }
+</ul>
+
+<hr />
+<h2>View Data</h2>
+<h3>@ViewData["Baslik1"]</h3>
+<ul>
+    @foreach (var item in ViewData["Ogrenciler1"] as List<Student>)
+    {
+        <li>@item.Id - @item.Name</li>
+    }
+</ul>
+
+<hr />
+<h2>Temp Data</h2>
+<h3>@TempData["Baslik2"]</h3>
+<ul>
+    @foreach (var item in TempData["Ogrenciler2"] as List<Student>)
+    {
+        <li>@item.Id - @item.Name</li>
+    }
+</ul>

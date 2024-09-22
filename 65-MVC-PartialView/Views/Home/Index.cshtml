@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            @Html.Partial("_MenuPartial")
+        </div>
+        <div class="col-9">
+            @foreach (var item in Model)
+            {
+                @Html.Partial("_ProductPartial", item)
+            }
+        </div>
+    </div>
+</div>

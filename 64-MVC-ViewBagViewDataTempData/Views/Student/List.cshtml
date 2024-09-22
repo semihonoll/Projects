@@ -1,0 +1,48 @@
+﻿@model IEnumerable<_64_MVC_ViewBagViewDataTempData.Models.Student>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <!--Model Name-->
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <!--Model Value-->
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                @Html.TextBox("username", "Default Value", new { @class = "form-control"})
+                    @Html.CheckBox("isAllow", true)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-controller="Student" asp-route-id="2">Güncelle</a>
+                @Html.ActionLink("Güncelle", "Edit", "Student", new { id=item.Id})
+
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

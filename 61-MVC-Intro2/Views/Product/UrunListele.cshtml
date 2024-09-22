@@ -1,0 +1,24 @@
+﻿@model List<Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UrunListele</title>
+</head>
+<body>
+    <h1>Urun Listele</h1>
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>@item.Name</h4>
+            <p>@item.Price TL</p>
+        </div>
+    }
+</body>
+</html>

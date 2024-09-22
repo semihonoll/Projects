@@ -1,0 +1,18 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<h1>Index</h1>
+<div class="row">
+    <div class="col-3">
+        @Html.Partial("_MenuPartial")
+    </div>
+    <div class="col-9">
+        @foreach (var item in Model)
+        {
+            @Html.Partial("_ProductPartial", item)
+        }
+    </div>
+</div>
+

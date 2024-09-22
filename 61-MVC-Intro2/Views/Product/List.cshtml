@@ -1,0 +1,36 @@
+﻿@model Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <div>
+        <label for="adi"></label>
+        <input type="text" name="adi" />
+    </div>
+    <div>
+        <a asp-controller="Home" asp-action="Index" asp-route-id="4" >Ana Sayfa</a>
+    </div>
+    <div>
+        <form method="get" asp-controller="Home" asp-action="Index" >
+
+        </form>
+
+        
+
+        <label asp-for="Name" ></label>
+        <input asp-for="Name" /> <br />
+        <label asp-for="Price"></label>
+        <input asp-for="Price"/> <br/>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿Personel Yönetim Sistemi
+Bir şirketin çalışanlarını yönetmek için bir sistem geliştirmeniz istenmektedir. Bu sistemde çalışanları ve departmanları yönetecek, çalışanlara maaş ve departman atamaları yapılacaktır.
+
+
+Sınıfların Tanımı
+
+Personeller
+ -Employee Class
+
+Departmanlar
+ -Department Abstract Class
+ -DepartmentSoftware : Department
+ -DepartmentIT : Department
+ -DepartmentHumanRes : Department
+
+Şirket
+ -Generic Kullanımı
+ -ICompany
+ -Company

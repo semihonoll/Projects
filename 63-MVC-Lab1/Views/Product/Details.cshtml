@@ -1,0 +1,16 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Ürün Detay</h1>
+
+<div class="container">
+    <div class="row">
+        <h3>@Model.Name</h3>
+        <p><b>Urun No: </b> @Model.Id</p>
+        <p><b>Fiyat: </b> @Model.Price</p>
+        <p><b>Stok: </b> @Model.Stock</p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Index</h1>
+<form method="post" asp-action="Edit" asp-controller="Home">
+    <div>
+        <label>Kullanici Adı:</label>
+        <input type="text" id="userName" name="userName" />
+    </div>
+    <div>
+        <label>E-Posta Adresi:</label>
+        <input type="text" id="email" name="email" />
+    </div>
+    <div>
+        <label>Şifre</label>
+        <input type="password" id="pass" name="pass" />
+    </div>
+    <div>
+        <button type="submit">Gönder</button>
+    </div>
+</form>
+

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tüm Ürünlerimiz</h1>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-3 m-3 border p-3">
+                    <div class="text-center">
+                        @if (item.Image is null)
+                        {
+                            <img src="~/img/picture_icon.png" width="64" />
+                        }
+                        else
+                        {
+                            <img src="~/img/@item.Image" width="64"/>    
+                        }
+                    </div>
+                    <div class="text-center">
+                        <h4>@item.Name</h4>
+                    </div>
+                    <div class="text-center">
+                        <b>Fiyat: </b>@item.Price - <b>Stok: </b>@item.Stock
+                    </div>
+                    <div>
+                        <button class="btn btn-success">Sepete Ekle</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<_70_MVC_Area.Services.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @if (item.Stock<50)
+                    {
+                        <span class="badge text-bg-danger">@item.Stock</span>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    }
+                    
+            </td>
+            <td>
+                @if (item.Image is null)
+                    {
+                        <img src="~/img/picture_icon.png" width="64" />
+                    }
+                    else
+                    {
+                        <img src="~/img/@item.Image" width="64" />
+                    }
+                </td>
+            <td>
+                @if (item.IsActive)
+                {
+                    <a asp-action="IsActive" asp-route-id="@item.Id">
+                        <img src="~/img/green_icon.png" width="32" />
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="IsActive" asp-route-id="@item.Id">
+                        <img src="~/img/red_icon.png" width="32" />
+                    </a>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
